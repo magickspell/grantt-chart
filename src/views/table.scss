@@ -1,0 +1,216 @@
+@import "../index.scss";
+
+.table_wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  background: white;
+  padding: 24px;
+  box-sizing: border-box;
+
+  .table {
+    position: relative;
+
+    .table_content_shadow-right {
+      position: absolute;
+      width: 22px;
+      height: 838px;
+      left: 968px;
+      top: 88px;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);;
+    }
+    .table_content_shadow-right {
+      left: 1372px;
+    }
+
+    /* table_header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      h1 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      button {
+        position: relative;
+        background: #FFFFFF;
+        border: 1px solid rgba(38, 40, 66, 0.12);
+        border-radius: 10px;
+        width: 100px;
+        height: 40px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        padding-left: 24px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        span {
+          position: absolute;
+          transform: rotate(90deg);
+          font-size: 28px;
+          left: 8px;
+        }
+
+        &:hover {
+          background: lightgray;
+        }
+      }
+    }
+
+    /* table content */
+    .table_content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 390px max-content;
+      border: 1px solid rgba(38, 40, 66, 0.12);
+      border-radius: 10px;
+      height: 80vh;
+      min-height: 700px;
+      overflow-x: scroll;
+
+      .table_content_work-items {
+        .table_content_work-items_head {
+          @include flex-center;
+          justify-content: flex-start;
+          padding-left: 20px;
+          background: #F7F8FC;
+          border: 1px solid rgba(38, 40, 66, 0.12);
+          border-radius: 10px 0 0 0;
+          box-sizing: border-box;
+          height: 48px;
+        }
+
+        .table_content_work-items_head-empty {
+          height: 40px;
+          border: 1px solid rgba(38, 40, 66, 0.12);
+        }
+
+        .table_content_work-items_item.lvl1 {
+          @include flex-table-work-item;
+          padding-left: 20px;
+
+          .table_content_work-items_item-graphic {
+            background: lightblue;
+            border: 2px solid dodgerblue;
+          }
+        }
+
+        .table_content_work-items_item.lvl2 {
+          @include flex-table-work-item;
+          padding-left: 40px;
+
+          .table_content_work-items_item-graphic {
+            background: lightgoldenrodyellow;
+            border: 2px solid lightsalmon;
+          }
+        }
+
+        .table_content_work-items_item.lvl3 {
+          @include flex-table-work-item;
+          padding-left: 60px;
+
+          .table_content_work-items_item-graphic {
+            background: lightgreen;
+            border: 2px solid yellowgreen;
+          }
+        }
+
+        .table_content_work-items_item.lvl4 {
+          @include flex-table-work-item;
+          padding-left: 80px;
+
+          .table_content_work-items_item-graphic {
+            background: lightgreen;
+            border: 2px solid yellowgreen;
+          }
+        }
+
+        .table_content_work-items_item.lvl5 {
+          @include flex-table-work-item;
+          padding-left: 100px;
+
+          .table_content_work-items_item-graphic {
+            background: lightgoldenrodyellow;
+            border: 2px solid lightsalmon;
+          }
+        }
+      }
+
+      .table_content_calendar {
+        overflow-y: hidden;
+
+        .table_content_calendar_head {
+          @include flex-center;
+          justify-content: flex-start;
+          background: #F7F8FC;
+          border-top: 1px solid rgba(38, 40, 66, 0.12);
+          border-right: 1px solid rgba(38, 40, 66, 0.12);
+          box-sizing: border-box;
+          border-radius: 0 10px 0 0;
+          height: 48px;
+
+          .table_content_calendar_head_item {
+            @include flex-center;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .table_content_calendar_head_item_week {
+              @include flex-center;
+              justify-content: flex-start;
+              height: 24px;
+              box-sizing: border-box;
+
+              .table_content_calendar_head_item_weeks {
+                @include flex-center;
+                height: 24px;
+                width: 154px;
+                border-right: 1px solid rgba(38, 40, 66, 0.12);
+                box-sizing: border-box;
+              }
+            }
+
+            .table_content_calendar_head_item_days {
+              @include flex-center;
+              justify-content: flex-start;
+
+              .table_content_calendar_head_item_days_item {
+                @include flex-center;
+                width: 22px;
+                height: 24px;
+                border: 1px solid rgba(38, 40, 66, 0.12);
+                border-left: none;
+                box-sizing: border-box;
+                font-size: 14px;
+
+
+                &.holiday {
+                  color: lightgray;
+                }
+              }
+            }
+          }
+        }
+
+        .table_content_calendar_columns {
+          @include flex-center;
+          justify-content: flex-start;
+          height: 818px;
+
+
+          .table_content_calendar_columns_item {
+            min-width: 22px;
+            width: 22px;
+            height: 100%;
+            border: 1px solid rgba(38, 40, 66, 0.12);
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}

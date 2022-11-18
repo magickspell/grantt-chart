@@ -1,0 +1,141 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-table-work-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid rgba(38, 40, 66, 0.12);
+
+  i {
+    color: gray;
+    font-size: 18px;
+    &:first-child {
+      font-size: 28px;
+    }
+  }
+
+  position: relative;
+  .table_content_work-items_item-graphic {
+    position: absolute;
+    height: 32px;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    p {
+      @include flex-center;
+      height: 32px;
+      margin: 0;
+      white-space: nowrap;
+      position: absolute;
+      left: 100%;
+      padding-left: 12px;
+    }
+  }
+
+  &.visible {
+  }
+  &.invisible {
+    display: none;
+    height: 0;
+    border: none;
+  }
+}
+
+body {
+  background: lightgray;
+  color: #262842;
+  font-family: Roboto, sans-serif;
+}
+
+
+/* details */
+details > summary {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+
+details > summary > .table_content_work-items_item.lvl1 {
+  &::before {
+    content: '▽';
+    position: absolute;
+    top: 12px;
+    left: 8px;
+  }
+}
+
+
+details[open] > summary > .table_content_work-items_item.lvl1 {
+  &::before {
+    content: '△';
+    position: absolute;
+    top: 12px;
+    left: 8px;
+  }
+}
+
+details > summary > .table_content_work-items_item.lvl2 {
+  &::before {
+    content: '▽';
+    position: absolute;
+    top: 12px;
+    left: 28px;
+  }
+}
+
+
+details[open] > summary > .table_content_work-items_item.lvl2 {
+  &::before {
+    content: '△';
+    position: absolute;
+    top: 12px;
+    left: 28px;
+  }
+}
+
+details > summary > .table_content_work-items_item.lvl3 {
+  &::before {
+    content: '▽';
+    position: absolute;
+    top: 12px;
+    left: 48px;
+  }
+}
+
+
+details[open] > summary > .table_content_work-items_item.lvl3 {
+  &::before {
+    content: '△';
+    position: absolute;
+    top: 12px;
+    left: 48px;
+  }
+}
+
+details > summary > .table_content_work-items_item.lvl4 {
+  &::before {
+    content: '▽';
+    position: absolute;
+    top: 12px;
+    left: 68px;
+  }
+}
+
+
+details[open] > summary > .table_content_work-items_item.lvl4 {
+  &::before {
+    content: '△';
+    position: absolute;
+    top: 12px;
+    left: 68px;
+  }
+}
